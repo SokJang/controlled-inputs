@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+/* generals */
+body,
+input,
+button {
+  font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* form layout */
+fieldset {
+  background: whitesmoke;
+  padding: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+label,
+input,
+button,
+fieldset {
+  margin-bottom: 15px;
+}
+
+.cta-container {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-container,
+.edit-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: calc(50% - 20px);
 }
 
-.App-link {
-  color: #61dafb;
+.edit-container {
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-add-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-add-container > input,
+.edit-add-container > button {
+  width: calc(88%);
+}
+
+input {
+  background-color: white;
+  padding: 15px;
+}
+button {
+  background-color: #282c34;
+  padding: 15px;
+}
+
+/* utilities */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
