@@ -3,6 +3,7 @@ body,
 input,
 button {
   font-size: 18px;
+  color: black;
 }
 
 main {
@@ -20,6 +21,7 @@ fieldset {
 label,
 input,
 button,
+.edit-default-container > span,
 fieldset {
   margin-bottom: 15px;
 }
@@ -39,28 +41,27 @@ fieldset {
 .edit-container {
   display: flex;
   flex-direction: column;
-  width: calc(50% - 20px);
+  width: calc(50% - 15px);
 }
 
-.edit-container {
-}
-
-.edit-add-container {
+.edit-math-container,
+.edit-default-container {
   display: flex;
   flex-direction: column;
 }
-
-.edit-add-container > input,
-.edit-add-container > button {
-  width: calc(88%);
+.edit-math-container > span > button,
+.edit-default-container > span > button {
+  width: 50%;
 }
 
 input {
   background-color: white;
   padding: 15px;
 }
+
 button {
   background-color: #282c34;
+  color: whitesmoke;
   padding: 15px;
 }
 

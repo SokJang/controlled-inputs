@@ -1,28 +1,36 @@
 import React from "react";
-import { Fieldset } from "./components/fieldset";
+import { FieldSet } from "./components/fieldset/";
+import { CtaContainer } from "./components/cta";
 import "./App.css";
 
 function App() {
-  // const data = {}
+  const products = [
+    {
+      id: "1",
+      totalAmount: "5",
+    },
+    {
+      id: "2",
+      totalAmount: "10",
+    },
+  ];
+  const fieldsets = products.map((product) => (
+    <FieldSet
+      key={product.id}
+      id={product.id}
+      totalAmount={product.totalAmount}
+    />
+  ));
   const handleSubmit = () => {
     console.log("all input form values submitted to server");
-  };
-  const resetAllchanges = () => {
-    console.log("all input form values are resetted");
   };
   return (
     <div className="App">
       <main>
         <h1>hi</h1>
         <form onSubmit={handleSubmit}>
-          <Fieldset />
-          <Fieldset />
-          <span className="cta-container">
-            <button type="reset" onClick={resetAllchanges}>
-              reset all changes
-            </button>
-            <button type="submit">submit all changes</button>
-          </span>
+          {fieldsets}
+          <CtaContainer />
         </form>
       </main>
     </div>
