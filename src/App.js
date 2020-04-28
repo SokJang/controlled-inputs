@@ -1,35 +1,25 @@
 import React from "react";
-import { FieldSet } from "./components/fieldset/";
+import { Product } from "./components/fieldset/";
 import { CtaContainer } from "./components/cta";
 import "./App.css";
 
-function App() {
-  const products = [
-    {
-      id: "1",
-      totalAmount: "5",
-    },
-    {
-      id: "2",
-      totalAmount: "10",
-    },
-  ];
-  const fieldsets = products.map((product) => (
-    <FieldSet
-      key={product.id}
-      id={product.id}
-      totalAmount={product.totalAmount}
-    />
+function App(products) {
+  const product = products.products.map((product) => (
+    <Product key={product.id} product={product} />
   ));
-  const handleSubmit = () => {
-    console.log("all input form values submitted to server");
+
+  const handleSubmit = (e) => {
+    alert("how do i get the data: later task");
+    console.log(`${product.id}: ${product.totalAmount}`);
+    console.log(product);
+    e.preventDefault();
   };
   return (
     <div className="App">
       <main>
         <h1>hi</h1>
         <form onSubmit={handleSubmit}>
-          {fieldsets}
+          {product}
           <CtaContainer />
         </form>
       </main>
