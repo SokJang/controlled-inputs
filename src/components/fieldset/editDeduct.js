@@ -2,14 +2,16 @@ import React, { useState } from "react";
 
 export const EditDeduct = (props) => {
   const [number, setNumber] = useState(0);
+  const showReset = props.showReset;
+  const id = props.id;
 
   return (
     <span className="edit-math-container">
-      <label htmlFor={`input-id-${props.id}-deduct-amount`}>
+      <label htmlFor={`input-${id}-deduct-amount`}>
         deduct from total amount
       </label>
       <input
-        id={`input-id-${props.id}-deduct-amount`}
+        id={`input-${id}-deduct-amount`}
         type="number"
         placeholder="please deduct integers"
         value={number}
@@ -20,7 +22,7 @@ export const EditDeduct = (props) => {
           type="reset"
           onClick={() => {
             setNumber(0);
-            props.showReset();
+            showReset();
           }}
         >
           reset
@@ -29,7 +31,7 @@ export const EditDeduct = (props) => {
           type="button"
           onClick={() => {
             setNumber(number);
-            props.showReset();
+            showReset();
           }}
         >
           deduct

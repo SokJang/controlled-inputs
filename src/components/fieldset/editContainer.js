@@ -11,6 +11,8 @@ export const EditContainer = (props) => {
     deduct: false,
   };
   const [show, showContainer] = useReducer(reduce, initial);
+  const id = props.id;
+  const totalAmount = props.totalAmount;
 
   return (
     <span className="edit-container">
@@ -18,21 +20,21 @@ export const EditContainer = (props) => {
         <Default
           showAdd={() => showContainer({ type: "add" })}
           showDeduct={() => showContainer({ type: "deduct" })}
-          id={props.id}
+          id={id}
         />
       )}
       {show.add && (
         <Add
           showReset={() => showContainer({ type: "reset" })}
-          id={props.id}
-          totalAmount={props.totalAmount}
+          id={id}
+          totalAmount={totalAmount}
         />
       )}
       {show.deduct && (
         <Deduct
           showReset={() => showContainer({ type: "reset" })}
-          id={props.id}
-          totalAmount={props.totalAmount}
+          id={id}
+          totalAmount={totalAmount}
         />
       )}
     </span>

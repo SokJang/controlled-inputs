@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 export const EditAdd = (props) => {
   const [number, setNumber] = useState(0);
+  const showReset = props.showReset;
+  const id = props.id;
 
   return (
     <span className="edit-math-container">
-      <label htmlFor={`input-id-${props.id}-add-amount`}>
-        add to total amount
-      </label>
+      <label htmlFor={`input-${id}-add-amount`}>add to total amount</label>
       <input
-        id={`input-id-${props.id}-add-amount`}
+        id={`input-${id}-add-amount`}
         type="number"
         placeholder="please add integers"
         value={number}
@@ -19,7 +19,7 @@ export const EditAdd = (props) => {
         <button
           type="reset"
           onClick={() => {
-            props.showReset();
+            showReset();
             setNumber(0);
           }}
         >
@@ -29,7 +29,7 @@ export const EditAdd = (props) => {
           type="button"
           onClick={() => {
             setNumber(number);
-            props.showReset();
+            showReset();
           }}
         >
           add
