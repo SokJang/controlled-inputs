@@ -13,6 +13,10 @@ const products = [
     id: "2",
     totalAmount: "10",
   },
+  {
+    id: "4",
+    totalAmount: "15",
+  },
 ];
 
 ReactDOM.render(

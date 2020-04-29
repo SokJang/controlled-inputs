@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from "./components/fieldset/";
+import { Product } from "./components/fieldset_new/Product";
 import { CtaContainer } from "./components/cta";
 import "./App.css";
 
@@ -9,16 +9,19 @@ function App(products) {
   ));
 
   const handleSubmit = (e) => {
-    alert("how do i get the data: later task");
-    console.log(`${product.id}: ${product.totalAmount}`);
-    console.log(product);
+    console.log("ship current amount values: later task");
     e.preventDefault();
   };
+
+  const handleReset = (e) => {
+    console.log("reset current amount values: later task");
+    e.preventDefault();
+  };
+
   return (
     <div className="App">
       <main>
-        <h1>hi</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} onReset={handleReset}>
           {product}
           <CtaContainer />
         </form>
