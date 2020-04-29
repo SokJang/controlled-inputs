@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "./components/fieldset_new/Product";
 import { CtaContainer } from "./components/cta";
+import { Counter } from "./components/remember/Counter";
 import "./App.css";
 
 function App(products) {
@@ -25,6 +26,7 @@ function App(products) {
           {product}
           <CtaContainer />
         </form>
+        <Counter />
       </main>
     </div>
   );
