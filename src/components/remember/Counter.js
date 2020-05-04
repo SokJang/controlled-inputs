@@ -5,6 +5,7 @@ export const Counter = () => {
   const initial = 0;
   const [number, setNumber] = useState(0);
   const [count, setCount] = useState(initial);
+
   const add = (number) => parseInt(count, 10) + parseInt(number, 10);
   const deduct = (number) => parseInt(count, 10) - parseInt(number, 10);
 
@@ -22,8 +23,8 @@ export const Counter = () => {
       }}
     >
       <h3>
-        Ganz am Anfang: {initial}, jetzige Rechnung: {count}, die Rechnung
-        davor: {prevCount == null ? 0 : prevCount}
+        initial: {initial}, current: {count}, previous:{" "}
+        {prevCount == null ? 0 : prevCount}
       </h3>
       <input
         type="number"

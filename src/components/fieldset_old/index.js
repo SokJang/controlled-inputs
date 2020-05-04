@@ -3,8 +3,8 @@ import { DisplayContainer } from "./displayContainer";
 import { EditContainer } from "./editContainer";
 
 export const Product = (props) => {
-  const totalAmount = props.product.totalAmount;
-  const id = props.product.id;
+  const [totalAmount, id] = [props.product.totalAmount, props.product.id];
+
   return (
     <fieldset>
       <legend className="visually-hidden" content="headline fieldset" />

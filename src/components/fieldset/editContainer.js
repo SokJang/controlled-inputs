@@ -1,42 +1,51 @@
-import React, { useReducer } from "react";
-import { EditDefault as Default } from "./editDefault";
-import { EditAdd as Add } from "./editAdd";
-import { EditDeduct as Deduct } from "./editDeduct";
-import { editReduce as reduce } from "./editReduce";
+import React from "react";
 
 export const EditContainer = (props) => {
-  const initial = {
-    reset: true,
-    add: false,
-    deduct: false,
-  };
-  const [show, showContainer] = useReducer(reduce, initial);
-  const id = props.id;
-  const totalAmount = props.totalAmount;
+  const [
+    id,
+    initial,
+    number,
+    setNumber,
+    setCount,
+    addToAmount,
+    subtractFromAmount,
+  ] = [
+    props.id,
+    props.initial,
+    props.number,
+    props.setNumber,
+    props.setCount,
+    props.addToAmount,
+    props.subtractFromAmount,
+  ];
 
   return (
     <span className="edit-container">
-      {show.reset && (
-        <Default
-          showAdd={() => showContainer({ type: "add" })}
-          showDeduct={() => showContainer({ type: "deduct" })}
-          id={id}
-        />
-      )}
-      {show.add && (
-        <Add
-          showReset={() => showContainer({ type: "reset" })}
-          id={id}
-          totalAmount={totalAmount}
-        />
-      )}
-      {show.deduct && (
-        <Deduct
-          showReset={() => showContainer({ type: "reset" })}
-          id={id}
-          totalAmount={totalAmount}
-        />
-      )}
+      <label htmlFor={`input-${id}-add-amount`}>edit amount</label>
+      <input
+        id={`input-${id}-add-amount`}
+        type="number"
+        value={number}
+        min="0"
+        onChange={(e) => setNumber(e.target.value)}
+      />
+      <span>
+        <button type="button" onClick={addToAmount}>
+          plus
+        </button>
+        <button type="button" onClick={subtractFromAmount}>
+          minus
+        </button>
+      </span>
+      <button
+        type="button"
+        onClick={() => {
+          setNumber(0);
+          setCount(initial);
+        }}
+      >
+        reset
+      </button>
     </span>
   );
 };
