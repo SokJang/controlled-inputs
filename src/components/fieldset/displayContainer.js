@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const DisplayContainer = (props) => {
   const [count, id, initial] = [props.count, props.id, props.initial];
@@ -16,4 +17,10 @@ export const DisplayContainer = (props) => {
       />
     </span>
   );
+};
+
+DisplayContainer.propTypes = {
+  count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  id: PropTypes.string.isRequired,
+  initial: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

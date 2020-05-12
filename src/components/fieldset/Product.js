@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { DisplayContainer } from "./displayContainer";
 import { EditContainer } from "./editContainer";
 
@@ -37,4 +38,9 @@ export const Product = (props) => {
       </span>
     </fieldset>
   );
+};
+
+Product.propTypes = {
+  totalAmount: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
