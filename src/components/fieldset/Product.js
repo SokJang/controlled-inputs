@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { DisplayContainer } from "./displayContainer";
-import { EditContainer } from "./editContainer";
+import { DisplayContainer } from "./DisplayContainer";
+import { EditContainer } from "./EditContainer";
 
 export const Product = (props) => {
   const [id, initial, name] = [props.id, props.totalAmount, props.name];

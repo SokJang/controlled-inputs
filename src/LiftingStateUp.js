@@ -1,9 +1,8 @@
 import React from "react";
 import { Category } from "./components/fieldset/Category";
 import { CtaContainer } from "./components/cta";
-import "./App.css";
 
-function App(props) {
+function LiftingStateUp(props) {
   const categories = props.categories.map((category) => (
     <Category
       key={category.id}
@@ -26,7 +25,7 @@ function App(props) {
   return (
     <div className="App">
       <main>
-        <h1>useState</h1>
+        <h1>Lifting State Up</h1>
         <form onSubmit={handleSubmit} onReset={handleReset}>
           {categories}
           <CtaContainer />
@@ -36,4 +35,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default LiftingStateUp;
