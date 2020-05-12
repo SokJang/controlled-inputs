@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { LiftingStateUp } from "./components/LiftingStateUp";
+import { Categories } from "./components/LiftingStateUp";
 import * as serviceWorker from "./serviceWorker";
 
 const categories = [
@@ -72,7 +72,7 @@ const categories = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <LiftingStateUp categories={categories} />
+    <Categories categories={categories} />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,6 +1,7 @@
 import React from "react";
 
-export const CtaContainer = () => {
+export const CtaContainer = (props) => {
+  console.log(props);
   const submitAllChanges = () => {
     console.log("all values of a newly generated array");
   };

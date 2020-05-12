@@ -1,24 +1,32 @@
 import React from "react";
-import { Category } from "./Category";
+import PropTypes from "prop-types";
+import { Product } from "./Product";
 import { CtaContainer } from "../cta";
 
-export const LiftingStateUp = (props) => {
-  const categories = props.categories.map((category) => (
-    <Category
-      key={category.id}
-      catgoryId={category.id}
-      categoryName={category.name}
-      products={category.products}
-    />
-  ));
+export const Categories = (props) => {
+  const categories = props.categories.map((category) => {
+    return (
+      <div key={category.id}>
+        <h2>{category.name}</h2>
+        {category.products.map((product) => {
+          return (
+            <Product
+              key={product.id}
+              totalAmount={product.totalAmount}
+              id={product.id}
+              name={product.name}
+            />
+          );
+        })}
+      </div>
+    );
+  });
 
   const handleSubmit = (e) => {
-    console.log("ship current amount values: later task");
     e.preventDefault();
   };
 
   const handleReset = (e) => {
-    console.log("reset current amount values: later task");
     e.preventDefault();
   };
 
@@ -33,4 +41,8 @@ export const LiftingStateUp = (props) => {
       </main>
     </div>
   );
+};
+
+Categories.propTypes = {
+  categories: PropTypes.array.isRequired,
 };
