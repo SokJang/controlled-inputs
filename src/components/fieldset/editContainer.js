@@ -54,7 +54,7 @@ export const EditContainer = (props) => {
 EditContainer.propTypes = {
   id: PropTypes.string.isRequired,
   initial: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  number: PropTypes.number.isRequired,
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   setNumber: PropTypes.func.isRequired,
   setCount: PropTypes.func.isRequired,
   addToAmount: PropTypes.func.isRequired,

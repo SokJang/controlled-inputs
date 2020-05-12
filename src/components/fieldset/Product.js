@@ -4,10 +4,8 @@ import { DisplayContainer } from "./displayContainer";
 import { EditContainer } from "./editContainer";
 
 export const Product = (props) => {
-  const totalAmount = props.product.totalAmount;
-  const id = props.product.id;
+  const [id, initial, name] = [props.id, props.totalAmount, props.name];
 
-  const initial = totalAmount;
   const [number, setNumber] = useState(0);
   const [count, setCount] = useState(initial);
 
@@ -22,7 +20,7 @@ export const Product = (props) => {
 
   return (
     <fieldset>
-      <legend className="visually-hidden" content="headline fieldset" />
+      <legend>{name}</legend>
       <span className="container">
         <DisplayContainer id={id} initial={initial} count={count} />
         <EditContainer
@@ -41,6 +39,7 @@ export const Product = (props) => {
 };
 
 Product.propTypes = {
-  totalAmount: PropTypes.number.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  initial: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  name: PropTypes.string.isRequired,
 };

@@ -1,12 +1,16 @@
 import React from "react";
-import { Product } from "./components/fieldset/Product";
+import { Category } from "./components/fieldset/Category";
 import { CtaContainer } from "./components/cta";
-import { Counter } from "./components/remember/Counter";
 import "./App.css";
 
-function App(products) {
-  const product = products.products.map((product) => (
-    <Product key={product.id} product={product} />
+function App(props) {
+  const categories = props.categories.map((category) => (
+    <Category
+      key={category.id}
+      catgoryId={category.id}
+      categoryName={category.name}
+      products={category.products}
+    />
   ));
 
   const handleSubmit = (e) => {
@@ -22,11 +26,11 @@ function App(products) {
   return (
     <div className="App">
       <main>
+        <h1>useState</h1>
         <form onSubmit={handleSubmit} onReset={handleReset}>
-          {product}
+          {categories}
           <CtaContainer />
         </form>
-        <Counter />
       </main>
     </div>
   );
