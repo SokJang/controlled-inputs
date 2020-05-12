@@ -1,8 +1,8 @@
 import React from "react";
-import { Category } from "./components/fieldset/Category";
-import { CtaContainer } from "./components/cta";
+import { Category } from "./Category";
+import { CtaContainer } from "../cta";
 
-function LiftingStateUp(props) {
+export const LiftingStateUp = (props) => {
   const categories = props.categories.map((category) => (
     <Category
       key={category.id}
@@ -33,6 +33,4 @@ function LiftingStateUp(props) {
       </main>
     </div>
   );
-}
-
-export default LiftingStateUp;
+};

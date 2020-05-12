@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import LiftingStateUp from "./LiftingStateUp";
+import { LiftingStateUp } from "./components/LiftingStateUp";
 import * as serviceWorker from "./serviceWorker";
 
 const categories = [
