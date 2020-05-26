@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const EditContainer = (props) => {
   const [
@@ -48,4 +49,14 @@ export const EditContainer = (props) => {
       </button>
     </span>
   );
+};
+
+EditContainer.propTypes = {
+  id: PropTypes.string.isRequired,
+  initial: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  setNumber: PropTypes.func.isRequired,
+  setCount: PropTypes.func.isRequired,
+  addToAmount: PropTypes.func.isRequired,
+  subtractFromAmount: PropTypes.func.isRequired,
 };

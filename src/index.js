@@ -1,27 +1,109 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import { Categories } from "./components/LiftingStateUp";
 import * as serviceWorker from "./serviceWorker";
 
-const products = [
+const categories = [
   {
-    id: "1",
-    totalAmount: "5",
+    id: 1,
+    name: "Books",
+    products: [
+      {
+        id: "1",
+        name: "Fantasy",
+        totalAmount: "5",
+      },
+      {
+        id: "2",
+        name: "SciFy",
+        totalAmount: "10",
+      },
+      {
+        id: "3",
+        name: "Science",
+        totalAmount: "15",
+      },
+      {
+        id: "4",
+        name: "Literature",
+        totalAmount: "7",
+      },
+    ],
   },
   {
-    id: "2",
-    totalAmount: "10",
+    id: 2,
+    name: "Music",
+    products: [
+      {
+        id: "1",
+        name: "HipHop",
+        totalAmount: "5",
+      },
+      {
+        id: "2",
+        name: "RnB",
+        totalAmount: "10",
+      },
+      {
+        id: "3",
+        name: "Jazz",
+        totalAmount: "15",
+      },
+    ],
   },
   {
-    id: "4",
-    totalAmount: "15",
+    id: 3,
+    name: "Video",
+    products: [
+      {
+        id: "1",
+        name: "Musical",
+        totalAmount: "1",
+      },
+      {
+        id: "2",
+        name: "Comedy",
+        totalAmount: "1",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Recepies",
+    products: [
+      {
+        id: "1",
+        name: "Hot",
+        totalAmount: "3",
+      },
+      {
+        id: "2",
+        name: "Umami",
+        totalAmount: "2",
+      },
+      {
+        id: "3",
+        name: "Sweet",
+        totalAmount: "7",
+      },
+      {
+        id: "4",
+        name: "Sour",
+        totalAmount: "3",
+      },
+      {
+        id: "5",
+        name: "Salty",
+        totalAmount: "3",
+      },
+    ],
   },
 ];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App products={products} />
+    <Categories categories={categories} />
   </React.StrictMode>,
   document.getElementById("root")
 );

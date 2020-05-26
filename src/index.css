@@ -1,13 +1,89 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/* generals */
+body,
+input,
+button {
+  font-size: 18px;
+  color: black;
+}
+
+main {
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* form layout */
+fieldset {
+  background: whitesmoke;
+  padding: 15px;
+}
+
+label,
+input,
+button,
+.edit-default-container > span,
+fieldset {
+  margin-bottom: 15px;
+}
+
+.cta-container {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-container,
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 20px);
+}
+
+.edit-math-container,
+.edit-default-container {
+  display: flex;
+  flex-direction: column;
+}
+.edit-container > span > button {
+  width: 50%;
+}
+
+input {
+  background-color: white;
+  padding: 15px;
+}
+
+button {
+  background-color: #282c34;
+  color: whitesmoke;
+  padding: 15px;
+}
+
+/* utilities */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }

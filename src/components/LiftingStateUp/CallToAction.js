@@ -1,9 +1,7 @@
 import React from "react";
+import { SubmitAllChanges } from "./SubmitAllChanges";
 
 export const CtaContainer = () => {
-  const submitAllChanges = () => {
-    console.log("all values of a newly generated array");
-  };
   const resetAllChanges = () => {
     console.log("all input form values are resetted");
   };
@@ -12,7 +10,7 @@ export const CtaContainer = () => {
       <button type="reset" onClick={resetAllChanges}>
         reset all changes
       </button>
-      <button type="submit" onClick={submitAllChanges}>
+      <button type="submit" onClick={SubmitAllChanges}>
         submit all changes
       </button>
     </span>

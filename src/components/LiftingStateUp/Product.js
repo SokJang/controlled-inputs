@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { DisplayContainer } from "./displayContainer";
-import { EditContainer } from "./editContainer";
+import PropTypes from "prop-types";
+import { DisplayContainer } from "./DisplayContainer";
+import { EditContainer } from "./EditContainer";
 
 export const Product = (props) => {
-  const totalAmount = props.product.totalAmount;
-  const id = props.product.id;
+  const [id, initial, name] = [props.id, props.totalAmount, props.name];
 
-  const initial = totalAmount;
   const [number, setNumber] = useState(0);
   const [count, setCount] = useState(initial);
 
@@ -21,9 +20,9 @@ export const Product = (props) => {
 
   return (
     <fieldset>
-      <legend className="visually-hidden" content="headline fieldset" />
+      <legend>{name}</legend>
       <span className="container">
-        <DisplayContainer id={id} initial={initial} count={count} />
+        <DisplayContainer id={id} initial={initial} count={count} name={name} />
         <EditContainer
           id={id}
           initial={initial}
@@ -37,4 +36,10 @@ export const Product = (props) => {
       </span>
     </fieldset>
   );
+};
+
+Product.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  initial: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  name: PropTypes.string.isRequired,
 };
