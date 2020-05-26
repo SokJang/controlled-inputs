@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Product } from "./Product";
-import { CtaContainer } from "../cta";
+import { CtaContainer } from "./CallToAction";
 
 export const Categories = (props) => {
-  const categories = props.categories.map((category) => {
+  const products = props.categories.map((category) => {
     return (
-      <div key={category.id}>
+      <div key={category.id} id={category.id} className="category">
         <h2>{category.name}</h2>
         {category.products.map((product) => {
           return (
@@ -34,8 +34,8 @@ export const Categories = (props) => {
     <div className="App">
       <main>
         <h1>Lifting State Up</h1>
-        <form onSubmit={handleSubmit} onReset={handleReset}>
-          {categories}
+        <form id="form" onSubmit={handleSubmit} onReset={handleReset}>
+          {products}
           <CtaContainer />
         </form>
       </main>

@@ -24,6 +24,11 @@ const categories = [
         name: "Science",
         totalAmount: "15",
       },
+      {
+        id: "4",
+        name: "Literature",
+        totalAmount: "7",
+      },
     ],
   },
   {
@@ -58,13 +63,39 @@ const categories = [
       },
       {
         id: "2",
-        name: "Horror",
+        name: "Comedy",
         totalAmount: "1",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Recepies",
+    products: [
+      {
+        id: "1",
+        name: "Hot",
+        totalAmount: "3",
+      },
+      {
+        id: "2",
+        name: "Umami",
+        totalAmount: "2",
       },
       {
         id: "3",
-        name: "Comedy",
-        totalAmount: "1",
+        name: "Sweet",
+        totalAmount: "7",
+      },
+      {
+        id: "4",
+        name: "Sour",
+        totalAmount: "3",
+      },
+      {
+        id: "5",
+        name: "Salty",
+        totalAmount: "3",
       },
     ],
   },

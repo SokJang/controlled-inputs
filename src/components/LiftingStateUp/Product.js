@@ -22,7 +22,7 @@ export const Product = (props) => {
     <fieldset>
       <legend>{name}</legend>
       <span className="container">
-        <DisplayContainer id={id} initial={initial} count={count} />
+        <DisplayContainer id={id} initial={initial} count={count} name={name} />
         <EditContainer
           id={id}
           initial={initial}

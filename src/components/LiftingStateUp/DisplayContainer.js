@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const DisplayContainer = (props) => {
-  const [count, id, initial] = [props.count, props.id, props.initial];
+  const [count, id, name, initial] = [
+    props.count,
+    props.id,
+    props.name,
+    props.initial,
+  ];
 
   return (
     <span className="display-container">
@@ -10,6 +15,9 @@ export const DisplayContainer = (props) => {
         total amount (initial: {initial})
       </label>
       <input
+        className="read"
+        data-product-name={name}
+        data-product-id={id}
         id={`readOnly-${id}-total-amount`}
         type="number"
         value={count}
